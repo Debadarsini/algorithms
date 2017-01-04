@@ -1,4 +1,6 @@
 Problems solved 
-  1.Percolation
-  2.Deque
-  3.RandomizedQueue
+<li>
+  <ul>Percolation</ul>
+  <ul>Deque</ul>
+  <ul>RandomizedQueue</ul>
+</li>
