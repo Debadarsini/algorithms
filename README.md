@@ -1,6 +1,6 @@
 Problems solved 
 <li>
-  <ul>Percolation</ul>
-  <ul>Deque</ul>
-  <ul>RandomizedQueue</ul>
+  <ol>Percolation</ol>
+  <ol>Deque</ol>
+  <ol>RandomizedQueue</ol>
 </li>
