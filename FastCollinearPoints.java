@@ -44,13 +44,14 @@ public class FastCollinearPoints {
         // finds all line segments containing 4 or more points
         if (points == null || points.length <= 0)
             throw new NullPointerException("argument is null");
-        Arrays.sort(points);
-        checkDuplicatedEntries(points);
+        Point[] pointsClone = points.clone();
+        Arrays.sort(pointsClone);
+        checkDuplicatedEntries(pointsClone);
         int length = points.length;
         for (int p = 0; p < length; p++) {
-            Point[] arrayCopy = points.clone();
-            Arrays.sort(arrayCopy, points[p].slopeOrder());
-            assert points[p].compareTo(arrayCopy[0]) == 0;
+            Point[] arrayCopy = pointsClone.clone();
+            Arrays.sort(arrayCopy, pointsClone[p].slopeOrder());
+            assert pointsClone[p].compareTo(arrayCopy[0]) == 0;
             int q = 1;
             while (q < length - 1) {
                 int r = q + 1;

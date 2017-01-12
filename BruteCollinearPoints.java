@@ -33,16 +33,17 @@ public class BruteCollinearPoints {
         if (points == null || points.length <= 0)
             throw new NullPointerException("argument is null");
         int length = points.length;
-        Arrays.sort(points);
-        checkDuplicatedEntries(points);
+        Point[] pointsClone = points.clone();
+        Arrays.sort(pointsClone);
+        checkDuplicatedEntries(pointsClone);
         for (int p = 0; p < length - 3; p++) {
             for (int q = p + 1; q < length - 2; q++) {
-                double slopePQ = points[p].slopeTo(points[q]);
+                double slopePQ = pointsClone[p].slopeTo(pointsClone[q]);
                 for (int r = q + 1; r < length - 1; r++) {
-                    if (Double.compare(slopePQ ,points[p].slopeTo(points[r]))==0) {
+                    if (Double.compare(slopePQ, pointsClone[p].slopeTo(pointsClone[r])) == 0) {
                         for (int s = r + 1; s < length; s++) {
-                            if (Double.compare(slopePQ, points[p].slopeTo(points[s]))==0)
-                                lineSegments.add(new LineSegment(points[p], points[s]));
+                            if (Double.compare(slopePQ, pointsClone[p].slopeTo(pointsClone[s])) == 0)
+                                lineSegments.add(new LineSegment(pointsClone[p], pointsClone[s]));
                         }
                     }
                 }
