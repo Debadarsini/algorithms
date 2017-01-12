@@ -8,12 +8,17 @@ import java.util.function.IntFunction;
  * 
  * Only swap happens for a particular index.
  * 
- * Index is calculates using 3*h+1 formula.
+ * Index is calculated using 3*h+1 formula.
  * 
- * It starts from higher index difference to goes for lower difference
+ * It starts from higher index. 
+ * Every iteration h reduces by h/3.
+ * 
+ * It is h sort. Instead of elements being swapped with previous position , 
+ * it swapped with h position.
+ * 
  * Worst case - n^3/2.
  * 
- * Practically it is very less.
+ * Practically it is very less.Linearthmic - i.e. nlogn
  * 
  * Used in embeded systems.. less code...
  * @author debnayak
